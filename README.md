@@ -1,2 +1,4 @@
-# job-board-v2
-A nicer version of job-board
+job-board-v2
+=========
+
+Plate-forme job de Macao, encore mieux que celle de Zéphyr.
