@@ -15,5 +15,12 @@ parameters:
     mailer_user: ~
     mailer_password: ~
 
+    wkhtmltopdf_binary: /usr/local/bin/wkhtmltopdf.sh
+
+    client_id: ~
+    client_secret: ~
+    client_hd: edu.esiee.fr
+    proxy: ""
+
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt

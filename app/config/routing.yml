@@ -1,0 +1,17 @@
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+google_login:
+    path: /login/check-google
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+macao_user:
+    resource: "@MacaoUserBundle/Resources/config/routing.yml"
+    prefix:   /

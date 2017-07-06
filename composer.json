@@ -4,7 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "": "src/"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -20,9 +20,15 @@
         "php": ">=5.3.9",
         "doctrine/doctrine-bundle": "~1.4",
         "doctrine/orm": "^2.4.8",
+        "egeloen/ckeditor-bundle": "^5.0",
+        "friendsofsymfony/user-bundle": "^2.0",
+        "hwi/oauth-bundle": "^0.5.3",
         "incenteev/composer-parameter-handler": "~2.0",
+        "jms/di-extra-bundle": "^1.8",
+        "knplabs/knp-paginator-bundle": "^2.6",
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
+        "stof/doctrine-extensions-bundle": "^1.2",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "~2.3,>=2.3.10",
         "symfony/symfony": "2.8.*",
