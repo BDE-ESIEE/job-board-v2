@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
             #Project bundles
             new Macao\UserBundle\MacaoUserBundle(),
             new Macao\JobBundle\MacaoJobBundle(),

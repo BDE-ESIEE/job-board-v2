@@ -24,6 +24,11 @@ hwi_oauth_login:
 google_login:
     path: /login/check-google
 
+jobs:
+    type:     rest
+    prefix: /api
+    resource: Macao\JobBundle\Controller\ApiController
+
 macao_admin:
     resource: "@MacaoAdminBundle/Resources/config/routing.yml"
     prefix:   /admin/
