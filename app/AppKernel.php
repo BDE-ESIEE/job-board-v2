@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             #Project bundles
             new Macao\UserBundle\MacaoUserBundle(),
             new Macao\JobBundle\MacaoJobBundle(),
+            new Macao\AdminBundle\MacaoAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -1,0 +1,31 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Modifier la catégorie {{ category.name }}</h2></br>
+            {% if not form.vars.valid %}
+                <div class="alert alert-danger alert-dismissable">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {% for child in form.children %}
+                        {% for error in child.vars.errors %}
+                            {{error.message}}{% if not loop.last %}</br>{% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST" {{ form_enctype(form) }}>
+                {{ form_widget(form._token) }}
+                <div class="form-group">
+                    <label>Nom de catégorie *</label>
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <label>Couleur (format héxadécimal) *</label>
+                    {{ form_widget(form.color, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <button type="submit" class="btn btn-info">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

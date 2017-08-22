@@ -1,0 +1,68 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> Tableau de bord
+                </div>
+                <ul class="list-group text-right">
+                    <li class="list-group-item text-left">
+                        Ce tableau de bord vous permet d'administrer le Job-Board.
+                    </li>
+                    <li class="list-group-item">
+                        <a href="" class="pull-left">Jobs</a>
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ path('macao_admin_job_index') }}" type="button" class="btn btn-default"><i class="fa fa-th-list" aria-hidden="true"></i> Liste</a>
+                            <a href="{{ path('macao_admin_job_new') }}" type="button" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="" class="pull-left">Catégories</a>
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ path('macao_admin_category_index') }}" type="button" class="btn btn-default"><i class="fa fa-th-list" aria-hidden="true"></i> Liste</a>
+                            <a href="{{ path('macao_admin_category_new') }}" type="button" class="btn btn-default"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="" class="pull-left">Utilisateurs</a>
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ path('macao_admin_user_index') }}" type="button" class="btn btn-default"><i class="fa fa-th-list" aria-hidden="true"></i> Liste</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i> Statistiques
+                </div>
+                <ul class="list-group text-right">
+                    <li class="list-group-item text-left">
+                        Quelques statistiques pour un coup d'oeil rapide sur les jobs mis en ligne.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-left">Nombre total de jobs visibles/créés :</span>
+                        <div class="btn-group btn-group-sm">
+                            {{ published }}
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-left">Nombre total de catégories :</span>
+                        <div class="btn-group btn-group-sm">
+                            {{ categories|length }}
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-left">Nombre total d'utilisateurs :</span>
+                        <div class="btn-group btn-group-sm">
+                            {{ users|length }}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

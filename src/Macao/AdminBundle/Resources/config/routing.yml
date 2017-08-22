@@ -1,0 +1,48 @@
+macao_admin_homepage:
+    path:     /
+    defaults: { _controller: MacaoAdminBundle:Default:index }
+
+macao_admin_job_index:
+    path:     /job/
+    defaults: { _controller: MacaoAdminBundle:Job:index }
+
+macao_admin_job_new:
+    path:     /job/new/
+    defaults: { _controller: MacaoAdminBundle:Job:new }
+
+macao_admin_job_edit:
+    path:     /job/edit/{id}/
+    defaults: { _controller: MacaoAdminBundle:Job:edit }
+
+macao_admin_job_delete:
+    path:     /job/delete/{id}/
+    defaults: { _controller: MacaoAdminBundle:Job:delete }
+
+macao_admin_category_index:
+    path:     /category/
+    defaults: { _controller: MacaoAdminBundle:Category:index }
+
+macao_admin_category_new:
+    path:     /category/new/
+    defaults: { _controller: MacaoAdminBundle:Category:new }
+
+macao_admin_category_edit:
+    path:     /category/edit/{id}/
+    defaults: { _controller: MacaoAdminBundle:Category:edit }
+
+macao_admin_category_delete:
+    path:     /category/delete/{id}/
+    defaults: { _controller: MacaoAdminBundle:Category:delete }
+
+macao_admin_user_index:
+    path:     /user/
+    defaults: { _controller: MacaoAdminBundle:User:index }
+
+macao_admin_user_edit:
+    path:     /user/edit/{id}/
+    defaults: { _controller: MacaoAdminBundle:User:edit }
+
+macao_admin_user_delete:
+    path:     /user/delete/{id}/
+    defaults: { _controller: MacaoAdminBundle:User:delete }
+
