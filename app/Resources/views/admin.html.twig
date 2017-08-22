@@ -20,8 +20,8 @@
                             <ul class="dropdown-menu" role="menu">
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li><a href="#">Sortir administration</a></li>
+                                    <li class="divider"></li>
                                 {% endif %}
-                                <li class="divider"></li>
                                 <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
                             </ul>
                         </li>
