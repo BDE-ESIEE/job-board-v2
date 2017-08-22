@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/signin.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block body %}
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post" role="form">
+        <h2 class="form-signin-heading">Connexion</h2>
+        {% if error %}
+            <div class="text-danger">Login ou mot de passe incorrect</div>
+        {% endif %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+        <label class="sr-only" for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+        <input type="text" id="username" name="_username" class="form-control first" placeholder="Login" required autofocus>
+        <label class="sr-only" for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+        <input type="password" id="password" name="_password" class="form-control last" placeholder="Mot de passe" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+        <a href="{{ path('hwi_oauth_service_redirect', {service: 'google'}) }}" class="btn btn-lg btn-danger btn-block">
+            <span class="fa fa-google"></span>
+            Se connecter avec Google
+        </a>
+        <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié</a><br>
+        <a href="{{ path('macao_job_homepage') }}"> Retour au site</a>
+    </form>
+{% endblock %}

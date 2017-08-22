@@ -1,3 +1,0 @@
-macao_user_homepage:
-    path:     /
-    defaults: { _controller: MacaoUserBundle:Default:index }
