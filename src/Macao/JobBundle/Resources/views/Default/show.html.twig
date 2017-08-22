@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12" style="padding-top:20px;">
+            <div class="panel panel-default" style="padding-bottom:25px;">
+                <div class="panel-heading text-center" style="background-color:{{ job.category.color }};color:#FFFFFF;"><b>{{ job.category.name }}</b></br>{{ job.title }}</div>
+                <div class="panel-body">
+                    <div class="text-center" style="padding-bottom:25px;">
+                        <div class="col-xs-12 col-sm-12 col-md-4"><i class="fa fa-user" aria-hidden="true"></i> {{ job.authorname }}</div>
+                        <div class="col-xs-12 col-sm-12 col-md-4"><i class="fa fa-envelope" aria-hidden="true"></i> {{ job.authoremail }}</div>
+                        <div class="col-xs-12 col-sm-12 col-md-4"><i class="fa fa-phone" aria-hidden="true"></i> {{ job.authortelephone }}<br></div>
+                    </div>
+                    <hr style="padding-bottom:25px;">
+                    <h4 class="text-center" style="padding-bottom:15px">{{ job.title }}</h4>
+                    <p class="text-center">{{ job.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

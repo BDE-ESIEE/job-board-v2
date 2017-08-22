@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             #Project bundles
             new Macao\UserBundle\MacaoUserBundle(),
+            new Macao\JobBundle\MacaoJobBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

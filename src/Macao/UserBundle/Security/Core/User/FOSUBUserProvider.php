@@ -5,6 +5,7 @@ namespace Macao\UserBundle\Security\Core\User;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException as AuthenticationException;
+use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Model\UserManagerInterface;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
@@ -23,16 +24,22 @@ class FOSUBUserProvider extends BaseFOSUBProvider
     private $validator;
 
     /**
+     * @var \Symfony\Component\DependencyInjection\ContainerInterface
+     */
+    private $serviceContainer;
+
+    /**
      * Constructor.
      *
      * @param UserManagerInterface $userManager FOSUB user provider.
      * @param array                $properties  Property mapping.
      */
-    public function __construct(UserManagerInterface $userManager, EntityManager $em, ValidatorInterface $validator, array $properties)
+    public function __construct(UserManagerInterface $userManager, EntityManager $em, ValidatorInterface $validator, array $properties, Container $serviceContainer)
     {
         parent::__construct($userManager, $properties);
         $this->em = $em;
         $this->validator = $validator;
+        $this->serviceContainer = $serviceContainer;
     }
 
     /**
@@ -80,13 +87,11 @@ class FOSUBUserProvider extends BaseFOSUBProvider
         $setterId = 'set' . ucfirst($serviceName) . 'Id';
         // if null just create new user and set it properties
         if (null === $user) {
-            $resources = $this->em->getRepository('ApplicationBDEBundle:Resource')->findAll();
             $user = $this->userManager->createUser();
             $user
                 ->setUsername($response->getRealName())
                 ->setEmail($userEmail)
                 ->setPlainPassword($response->getUsername())
-                ->setResource($resources[0])
                 ->setEnabled(true)
             ;
             $user->$setterId($response->getUsername());

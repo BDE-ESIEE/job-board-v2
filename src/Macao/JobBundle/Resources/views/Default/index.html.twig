@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Les dernières offres d'emploi du BDE</h3>
+            <span class="hidden-xs hidden-sm" style="font-size:15px;">Aujourd'hui, Job-Board contient :</span>
+            {% for category in categories %}
+                <span class="label hidden-xs hidden-sm" style="background-color:{{ category.color }};">{{ category.totaljobs }} {{ category.name }}</span>
+            {% endfor %}
+        </div>
+        {% for job in jobs %}
+            <div class="col-xs-12 col-sm-6 col-md-3" style="padding-top:20px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center" style="background-color:{{ job.category.color }};color:#FFFFFF;">
+                        <b>{{ job.category.name }}</br></b>
+                        {{ job.title }}
+                    </div>
+                    <div class="panel-body">
+                        {{ job.content|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES')|length > 100 ? job.content|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES')|slice(0, 100) ~ '...' : job.content|striptags|convert_encoding('UTF-8', 'HTML-ENTITIES') }}</br>
+                        <a href="{{ path('macao_job_show', {slug:job.slug}) }}" type="button" class="btn btn-default btn-xs" style="width:100%;margin-top:15px;">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

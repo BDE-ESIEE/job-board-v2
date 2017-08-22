@@ -12,6 +12,6 @@ google_login:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-macao_user:
-    resource: "@MacaoUserBundle/Resources/config/routing.yml"
+macao_job:
+    resource: "@MacaoJobBundle/Resources/config/routing.yml"
     prefix:   /

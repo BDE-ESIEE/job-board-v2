@@ -1,0 +1,4 @@
+services:
+#    macao_job.example:
+#        class: Macao\JobBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
