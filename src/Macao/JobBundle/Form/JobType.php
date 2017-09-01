@@ -30,11 +30,14 @@ class JobType extends AbstractType
                     'choice_label' => 'name',
                     'label' => 'Catégorie'))
             ->add('authorName', TextType::class, array(
-                    'label' => 'Nom'))
+                    'label' => 'Nom',
+                    'required' => false))
             ->add('authorEmail', TextType::class, array(
-                    'label' => 'Email'))
+                    'label' => 'Email',
+                    'required' => false))
             ->add('authorTelephone', TextType::class, array(
-                    'label' => 'Téléphone'))
+                    'label' => 'Téléphone',
+                    'required' => false))
             ->add('content', CKEditorType::class, array(
                     'label' => "Texte de l'annonce",
                     'config' => array(
